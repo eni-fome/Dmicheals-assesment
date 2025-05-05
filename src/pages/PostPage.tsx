@@ -1,5 +1,4 @@
-// src/pages/PostsPage.tsx
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import {
 	getPosts,
@@ -18,8 +17,6 @@ import {
 	DialogHeader,
 	DialogTitle,
 	DialogTrigger,
-	DialogFooter,
-	DialogClose,
 } from "../components/ui/dialog";
 import {
 	AlertDialog,
@@ -127,7 +124,7 @@ export function PostsPage() {
 	// DELETE POST Mutation
 	const deleteMutation = useMutation({
 		mutationFn: deletePost,
-		onSuccess: (_, deletedPostId) => {
+		onSuccess: (_, _deletedPostId) => {
 			// mutationFn receives id, onSuccess doesn't get it directly
 			// We rely on selectedPost.id if needed for manual update
 
